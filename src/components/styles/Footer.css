@@ -1,0 +1,8 @@
+.footer {
+    outline: 1px solid orange;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+}
