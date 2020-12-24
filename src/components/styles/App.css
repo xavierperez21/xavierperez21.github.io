@@ -1,38 +1,102 @@
 .App {
-  outline: solid 1px yellow;
-  text-align: center;
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 100px;
-  color: white
+    outline: solid 1px yellow;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 100px;
+    color: white
+}
+  
+.header {
+    /* outline: solid 1px red; */
+    width: 100%;
+    height: 100vh;
+}
+  
+.hero {
+    /* outline: 1px solid purple; */
+    min-height: calc(100vh - 100px);
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
 }
 
-.home {
-  outline: solid 1px red;
-  width: 100%;
-  height: calc(100vh - 100px);
+/* .hero::after {
+    content: "";
+    background-color: #00e6ee;
+    width: 70%;
+    height: 50%;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    opacity: 0.3;
+} */
+
+.hero-headline {
+    /* outline: 1px solid red; */
+    font-family: sans-serif;
+    text-align: left;
+    position: absolute;
+    top: 30%;
+}
+
+.headline__greeting {
+    color: #00e6ee;
+    margin-bottom: 15px;
+}
+
+.headline__name {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.image_model {
+    width: 70%;
+    height: 50%;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    z-index: -1;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #02021E, #050546);
+    z-index: -2;
 }
 
 .portfolio {
-  outline: solid 1px green;
-  width: 100%;
-  min-height: 100vh;
+    outline: solid 1px green;
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
 }
-
+  
 .education {
-  outline: solid 1px green;
-  width: 100%;
-  min-height: 100vh;
+    outline: solid 1px green;
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
 }
-
+  
 .about {
-  outline: solid 1px green;
-  width: 100%;
-  min-height: 100vh;
+    outline: solid 1px green;
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
 }
-
+  
 .contact {
-  outline: solid 1px green;
-  width: 100%;
-  min-height: 100vh;
+    outline: solid 1px green;
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
 }
