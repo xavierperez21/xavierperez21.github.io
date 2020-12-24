@@ -1,4 +1,38 @@
 .App {
+  outline: solid 1px yellow;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 100px;
+  color: white
+}
+
+.home {
+  outline: solid 1px red;
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+
+.portfolio {
+  outline: solid 1px green;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.education {
+  outline: solid 1px green;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.about {
+  outline: solid 1px green;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.contact {
+  outline: solid 1px green;
+  width: 100%;
+  min-height: 100vh;
 }
