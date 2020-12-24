@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
+import Scroll from './Scroll';
+import ProjectCard from './ProjectCard';
 
 import { TweenMax, Power3 } from 'gsap';
 
@@ -11,20 +13,7 @@ function App() {
     let headline = useRef(null);
 
     useEffect(() => {
-        console.log(headline);
-        TweenMax.fromTo(
-            headline,
-            1.2,
-            { 
-                opacity: 0,
-                y: 40
-            },
-            { 
-                opacity: 1,
-                y: 0,
-                ease: Power3.easeInOut
-            }
-        )
+        TweenMax.fromTo(headline, 1.2, { opacity: 0, y: 40 }, { opacity: 1, y: 0, ease: Power3.easeInOut })
     }, []);
 
     return (
@@ -37,14 +26,17 @@ function App() {
                             <h1 className="headline__name">Luis Xavier Pérez</h1>
                             <h2 className="headline__career"> Mechatronics Engineer and Software Developer</h2>
                         </div>
+                        <Scroll/>
                         {/* <img className="image_model" src="https://i.imgur.com/BRIKgoX.jpg" alt="me_posing"/> */}
+
                     </section>
                 </header>
 
                 <div className="slider"></div>
 
                 <section className="portfolio">
-                    PORTFOLIO
+                    <h1 className="portfolio-title">Projects</h1>
+                    <ProjectCard/>
                 </section>
                 
                 <section className="education">
