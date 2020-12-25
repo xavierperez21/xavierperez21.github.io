@@ -10,10 +10,14 @@ import { TweenMax, Power3 } from 'gsap';
 import './styles/App.css';
 
 function App() {
-    let headline = useRef(null);
+    let heroGreeting = useRef(null);
+    let heroName = useRef(null);
+    let heroCareer = useRef(null);
 
     useEffect(() => {
-        TweenMax.fromTo(headline, 1.2, { opacity: 0, y: 40 }, { opacity: 1, y: 0, ease: Power3.easeInOut })
+        TweenMax.fromTo(heroGreeting, 1, { opacity: 0, y: 40 }, { opacity: 1, y: 0, ease: Power3.easeInOut })
+        TweenMax.fromTo(heroName, 1.4, { opacity: 0, y: 20 }, { opacity: 1, y: 0, ease: Power3.easeInOut })
+        TweenMax.fromTo(heroCareer, 1.8, { opacity: 0, y: 20 }, { opacity: 1, y: 0, ease: Power3.easeInOut })
     }, []);
 
     return (
@@ -21,18 +25,16 @@ function App() {
                 <header className="header">
                     <Navbar/>
                     <section className="hero">
-                        <div className="hero-headline" ref={el => {headline = el}}>
-                            <p className="headline__greeting">Hi!, my name is</p>
-                            <h1 className="headline__name">Luis Xavier Pérez</h1>
-                            <h2 className="headline__career"> Mechatronics Engineer and Software Developer</h2>
+                        <div className="hero-headline">
+                            <p className="headline__greeting" ref={el => {heroGreeting = el}}>Hi!, my name is</p>
+                            <h1 className="headline__name" ref={el => {heroName = el}}>Luis Xavier Pérez</h1>
+                            <h2 className="headline__career" ref={el => {heroCareer = el}}> Mechatronics Engineer and Software Developer</h2>
                         </div>
                         <Scroll/>
                         {/* <img className="image_model" src="https://i.imgur.com/BRIKgoX.jpg" alt="me_posing"/> */}
 
                     </section>
                 </header>
-
-                <div className="slider"></div>
 
                 <section className="portfolio">
                     <h1 className="portfolio-title">Projects</h1>
