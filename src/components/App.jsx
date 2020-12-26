@@ -58,7 +58,9 @@ function App() {
                             {"id": 4, "name": "React.js"},
                             {"id": 5, "name": "Algorithms"}
                         ]}
-                        background_color = "#172A45"
+                        background_image = "#15036d"
+                        background_description = "#001547"
+                        orientation = "right"
                     />
                     <ProjectCard
                         title = "Todo List"
@@ -71,7 +73,9 @@ function App() {
                             {"id": 9, "name": "Flask"},
                             {"id": 10, "name": "Firebase"}
                         ]}
-                        background_color = "#172A45"
+                        background_image = "#099CA9"
+                        background_description = "#001547"
+                        orientation = "left"
                     />
                     <ProjectCard
                         title = "Personal Portfolio"
@@ -83,7 +87,9 @@ function App() {
                             {"id": 13, "name": "JavaScript"},
                             {"id": 14, "name": "React.js"}
                         ]}
-                        background_color = "#172A45"
+                        background_image = "#004346"
+                        background_description = "#001547"
+                        orientation = "right"
                     />
                     <ProjectCard
                         title = "Simon Says Game"
@@ -94,8 +100,10 @@ function App() {
                             {"id": 16, "name": "CSS3"},
                             {"id": 17, "name": "JavaScript"},
                         ]}
-                        background_color = "#172A45"
-                    />
+                        background_image = "#3C1642"
+                        background_description = "#001547"
+                        orientation = "left"
+                    />  
                 </section>
                 
                 <section className="education">

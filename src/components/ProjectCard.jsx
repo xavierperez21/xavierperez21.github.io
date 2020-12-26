@@ -1,30 +1,48 @@
 import React, { useRef, useEffect } from 'react';
 
 import './styles/ProjectCard.css';
-import github_icon from '../images/github_icon.png';
+import github_icon from '../images/github_icon.svg';
 import external_link_icon from '../images/external_link.png'
 
 function ProjectCard(props) {
     
-    let background_color = props.background_color;
+    let background_image = props.background_image;
+    let background_description = props.background_description;
+    let orientation = props.orientation;
     let technologies = props.technologies;
+
+    let project_image = useRef(null);
+    let project_title = useRef(null);
     let project_description = useRef(null);
+    let project_technologies = useRef(null);
+    let project_icons = useRef(null);
     
     useEffect(() => {
-        project_description.style.backgroundColor = background_color;
-    }, [background_color]); // I put the background_color prop as a dependency in the hook useEffect to not obtain a warning
+        project_image.style.background = background_image;
+        project_description.style.background = background_description;
+        // project_image.style.background = background_color;
+        // project_technologies.style.color = background_color;
+
+        if (orientation === "left") {
+            project_image.className += " project-image__left";
+            project_title.className += " project-title__left";
+            project_description.className += " project-description__left";
+            project_technologies.className += " project-technologies__list-left";
+            project_icons.className += " project-icons__left";
+        }
+    }, [background_description, background_image, orientation]); // I put the background_color prop as a dependency in the hook useEffect to not obtain a warning
 
     return (
         <div className="container">
-            <div className="project-image">
+            <div className="project-image" ref={el => {project_image = el}}>
                 <img src={props.image} alt="sorting_visualizer"/>
                 {/* <img src="%PUBLIC_URL%/sorting_visualizer.png" alt="sorting_visualizer"/> */}
             </div>
-                <h2 className="project-title">{props.title}</h2>
+                <h2 className="project-title" ref={el => {project_title = el}} >{props.title}</h2>
                 <div className="project-description" ref={el => {project_description = el}}>
                     {props.description}
                 </div>
-                <ul className="project-technologies__list">
+                <ul className="project-technologies__list" ref={el => {project_technologies = el}}>
                     {technologies.map(technologie => {
                         return (
                             <li key={technologie.id} className="technologies__list-item">
@@ -32,13 +50,8 @@ function ProjectCard(props) {
                             </li>
                         );
                     })}
-                    {/* <li className="technologies__list-item">HTML5</li>
-                    <li className="technologies__list-item">CSS3</li>
-                    <li className="technologies__list-item">JavaScript</li>
-                    <li className="technologies__list-item">React.js</li>
-                    <li className="technologies__list-item">Algorithms</li> */}
                 </ul>
-                <div className="project-icons">
+                <div className="project-icons" ref={el => {project_icons = el}}>
                     <img className="github-icon" src={github_icon} alt="github-icon"/>
                     <img className="link-icon" src={external_link_icon} alt="link-icon"/>
                 </div>
