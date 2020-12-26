@@ -5,7 +5,7 @@ import './styles/Scroll.css'
 class Scroll extends React.Component {
     render() {
         return(
-            <div class="box">
+            <div className="box">
                 <span></span>
                 <span></span>
                 <span></span>
