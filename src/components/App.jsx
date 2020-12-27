@@ -107,7 +107,70 @@ function App() {
                 </section>
                 
                 <section className="education">
-                    EDUCATION
+                    <h1 className="education__title">EDUCATION</h1>
+                    <div className="education__description">Some courses I've acomplished:</div>
+                    <div className="education__courses">
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                        <div className="courses-item">
+                            <img src="https://static.platzi.com/media/achievements/badge-react-2018-afc93257-48af-4e54-acaa-4d0433380f64.png" alt="course"/>
+                            <p>Curso de React.js</p>
+                        </div>
+                    </div>
                 </section>
                 
                 <section className="about">

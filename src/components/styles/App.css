@@ -90,7 +90,7 @@
     /* outline: solid 1px green; */
     min-height: 100vh;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 200px auto;
     padding: 10px;
 }
 
@@ -99,14 +99,66 @@
     font-size: 4em;
     margin: 50px 0;
 }
-  
+
+/* ------- EDUCATION ------------ */
 .education {
-    outline: solid 1px green;
+    /* outline: solid 1px green; */
     min-height: 100vh;
     width: 80%;
+    padding: 10px;
     margin: 0 auto;
+    font-family: sans-serif;
 }
-  
+
+.education__title {
+    /* outline: solid 1px red; */
+    font-family: sans-serif;
+    font-size: 4em;
+    margin: 50px 0;
+    text-align: left;
+}
+
+.education__description {
+    /* outline: solid 1px yellow; */
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.education__courses {
+    /* outline: solid 1px purple; */
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+}
+
+.courses-item {
+    /* outline: solid 1px orange; */
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-radius: 4px;
+    border: solid 1px #00e6ee;
+    padding: 5px 10px;
+}
+
+.courses-item > img {
+    /* outline: solid 1px green; */
+    width: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.courses-item > p {
+    color: #ffffff;
+}
+
+
+
+/* ------------------------------------- */
+
 .about {
     outline: solid 1px green;
     min-height: 100vh;

@@ -21,6 +21,9 @@
     transition: 0.4s;
     cursor: pointer;
     border: white;
+    box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.94);
+    -webkit-box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.94);
+    -moz-box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.94);
 }
 
 .project-image::after {
