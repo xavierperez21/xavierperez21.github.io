@@ -54,24 +54,103 @@ class Courses extends React.Component {
         }
 
         console.log("luego yo")
-        let courses = this.state.data.reverse();
-
+        let courses = this.state.data;
+        // [courses[53], courses[52]] = [courses[52], courses[53]]
         console.log(courses)
 
         return(
-            <div className="education__courses">
-                {
-                    courses.map(course => {
-                        return (
-                            <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
-                                <div className="courses-item">
-                                    <img src={course.badge} alt="course"/>
-                                    <p>{course.title}</p>
-                                </div>
-                            </a>
-                        );
-                    })
-                }
+            <div className="education__container">
+                    <div className="courses__title">
+                        <h2>JavaScript, Frontend and Backend</h2>
+                    </div>
+                    <div className="education__courses javascript-courses">
+                        {
+                            courses.map(course => {
+                                if (course.career === "Arquitectura Frontend" || course.career === "JavaScript" || course.career === "Backend con JavaScript") {
+                                    if(course.title.includes("Prework")) return null;
+                                    
+                                    return (
+                                        <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
+                                            <div className="courses-item">
+                                                <img src={course.badge} alt="course"/>
+                                                <p>{course.title}</p>
+                                            </div>
+                                        </a>
+                                    );
+                                }
+                                return null;
+                            })
+                        }
+                    </div>
+
+                    <div className="courses__title">
+                        <h2>Python</h2>
+                    </div>
+                    <div className="education__courses python-courses">
+                        {
+                            courses.map(course => {
+                                if (course.career === "Big Data y Data Science" || course.career === "Desarrollo Backend con Python y Django") {
+                                    if(course.title.includes("Prework")) return null;
+                                    
+                                    return (
+                                        <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
+                                            <div className="courses-item">
+                                                <img src={course.badge} alt="course"/>
+                                                <p>{course.title}</p>
+                                            </div>
+                                        </a>
+                                    );
+                                }
+                                return null;
+                            })
+                        }
+                    </div>
+
+                    <div className="courses__title">
+                        <h2>PHP</h2>
+                    </div>
+                    <div className="education__courses php-courses">
+                        {
+                            courses.map(course => {
+                                if (course.title.includes("PHP")) {
+                                    if(course.title.includes("Prework")) return null;
+                                    
+                                    return (
+                                        <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
+                                            <div className="courses-item">
+                                                <img src={course.badge} alt="course"/>
+                                                <p>{course.title}</p>
+                                            </div>
+                                        </a>
+                                    );
+                                }
+                                return null;
+                            })
+                        }
+                    </div>
+
+                    <div className="courses__title">
+                        <h2>Basics, tools and more</h2>
+                    </div>
+                    <div className="education__courses tools_and_more-courses">
+                        {
+                            courses.map(course => {
+                                if (course.career === "Desarrollo Backend con Ruby") {
+                                    if(course.title.includes("Prework")) return null;
+                                    
+                                    return (
+                                        <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
+                                            <div className="courses-item">
+                                                <img src={course.badge} alt="course"/>
+                                                <p>{course.title}</p>
+                                            </div>
+                                        </a>
+                                    );
+                                }
+                                return null;
+                            })
+                        }
+                    </div>
             </div>
         );
     }
