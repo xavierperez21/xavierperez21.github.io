@@ -5,8 +5,11 @@ import Footer from './Footer';
 import Scroll from './Scroll';
 import ProjectCard from './ProjectCard';
 import Courses from './Courses';
-// import PageLoading from '../components/PageLoading';
-// import PageError from '../components/PageError';
+
+import linkedin_icon from '../images/linkedin_icon.svg';
+import github_icon from '../images/github_icon.svg';
+import instagram_icon from '../images/instagram_icon.svg';
+import twitter_icon from '../images/twitter_icon.svg';
 
 import { TweenMax, Power3 } from 'gsap';
 
@@ -150,7 +153,7 @@ function App() {
                 <div className="about__container">
                     <div className="about__description">
                         <p>
-                            Hello! I'm Luis Xavier, a Software Developer and Mechatronics Engineer
+                            Hello! I'm Luis Xavier, a <strong>Software Developer</strong> and <strong>Mechatronics Engineer </strong> 
                             based in Guadalajara, Jalisco, México. <br/><br/> I love to build things for the
                             web and solve problems through programming. In my free time I study more about 
                             Artificial Intelligence and Web technologies. <br/><br/> Here are a few technologies I've been working with recently: <br/><br/>
@@ -164,9 +167,12 @@ function App() {
                             <li>PHP, Laravel</li>
                         </ul>
                         <p>
-                            Take a look at my portfolio work and let's see if we can work together on your next project! :)
+                            Take a look at my portfolio work and let's see if we can work together on your next project!
                         </p>
-                        <div className="description__btn"><span className="resume-text">Let's talk!</span></div>
+                        <div className="description__buttons">
+                            <div className="description__btn"><span className="resume-text">My work</span></div>
+                            <div className="description__btn"><span className="resume-text">Let's talk!</span></div>
+                        </div>
                     </div>
                     <div className="about__image">
                         <img src="https://i.imgur.com/zhhuLwo.jpg" alt="my_image"/>
@@ -175,7 +181,23 @@ function App() {
             </section>
             
             <section className="contact">
-                CONTACT
+                <div className="contact__separator"></div>
+                <div className="contact__title">
+                    <h1>Let's work together!</h1>
+                </div>
+                <div className="contact__links">
+                    <p>If you want to build amazing things, contact me in the following links.</p>
+                    <ul className="contact__links-list">
+                        <li>LinkedIn</li>
+                        <li><img className="github-icon" src={github_icon} alt="github-icon"/></li>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                    </ul>
+                </div>
+                <div className="contact__say_hi">
+                    <p>Or just say hi! to:</p>
+                    <p>hello@xavierpm.com</p>
+                </div>
             </section>
             
             <Footer/>
