@@ -146,7 +146,32 @@ function App() {
             </section>
             
             <section className="about">
-                ABOUT
+                <h1 className="education__title">About me</h1>
+                <div className="about__container">
+                    <div className="about__description">
+                        <p>
+                            Hello! I'm Luis Xavier, a Software Developer and Mechatronics Engineer
+                            based in Guadalajara, Jalisco, México. <br/><br/> I love to build things for the
+                            web and solve problems through programming. In my free time I study more about 
+                            Artificial Intelligence and Web technologies. <br/><br/> Here are a few technologies I've been working with recently: <br/><br/>
+                        </p>
+                        <ul className="description__list">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript</li>
+                            <li>React.js</li>
+                            <li>Vue.js</li>
+                            <li>Python, Django</li>
+                            <li>PHP, Laravel</li>
+                        </ul>
+                        <p>
+                            Take a look at my portfolio work and let's see if we can work together on your next project! :)
+                        </p>
+                        <div className="description__btn"><span className="resume-text">Let's talk!</span></div>
+                    </div>
+                    <div className="about__image">
+                        <img src="https://i.imgur.com/zhhuLwo.jpg" alt="my_image"/>
+                    </div>
+                </div>
             </section>
             
             <section className="contact">
