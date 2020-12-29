@@ -104,6 +104,7 @@
     color: #80f8fcc4;
     text-shadow: -2px 2px 2px black;
     font-size: 1.01em;
+    flex-wrap: wrap;
 }
 
 .technologies__list-item {
@@ -117,6 +118,9 @@
     grid-column-end: 64;
     grid-row-start: 9;
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .project-icons img {
@@ -125,7 +129,6 @@
     margin-right: 10px;
     cursor: pointer;
     transition: 0.1s;
-    color: #00e6ee; 
 }
 
 .project-icons img:hover {
@@ -164,6 +167,7 @@
     grid-column-start: 1 !important;
     grid-column-end: 26 !important;
     text-align: left !important;
+    justify-content: flex-start !important;
 }
 
 @media only screen and (max-width: 1250px){

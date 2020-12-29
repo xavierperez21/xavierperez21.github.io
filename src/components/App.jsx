@@ -181,22 +181,22 @@ function App() {
             </section>
             
             <section className="contact">
-                <div className="contact__separator"></div>
+                {/* <div className="contact__separator"></div> */}
                 <div className="contact__title">
                     <h1>Let's work together!</h1>
                 </div>
                 <div className="contact__links">
                     <p>If you want to build amazing things, contact me in the following links.</p>
                     <ul className="contact__links-list">
-                        <li>LinkedIn</li>
+                        <li><img className="linkedin_icon" src={linkedin_icon} alt="github-icon"/></li>
                         <li><img className="github-icon" src={github_icon} alt="github-icon"/></li>
-                        <li>Instagram</li>
-                        <li>Twitter</li>
+                        <li><img className="instagram_icon" src={instagram_icon} alt="github-icon"/></li>
+                        <li><img className="twitter_icon" src={twitter_icon} alt="github-icon"/></li>
                     </ul>
                 </div>
                 <div className="contact__say_hi">
                     <p>Or just say hi! to:</p>
-                    <p>hello@xavierpm.com</p>
+                    <a href="/"><p className="contact__mail">hello@xavierpm.com</p></a>
                 </div>
             </section>
             
