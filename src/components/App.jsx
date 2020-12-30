@@ -78,7 +78,7 @@ function App() {
             </header>
 
             <section className="portfolio">
-                <h1 className="portfolio-title">Projects</h1>
+                <h1 className="section-title">Projects</h1>
                 <ProjectCard
                     title = "Sorting Visualizer"
                     description = {
@@ -95,7 +95,6 @@ function App() {
                         {"id": 5, "name": "Algorithms"}
                     ]}
                     background_image = "#15036d"
-                    background_description = "#001547"
                     orientation = "right"
                 />
                 <ProjectCard
@@ -110,8 +109,8 @@ function App() {
                         {"id": 10, "name": "Firebase"}
                     ]}
                     background_image = "#099CA9"
-                    background_description = "#001547"
                     orientation = "left"
+                    object_position = "left"
                 />
                 <ProjectCard
                     title = "Personal Portfolio"
@@ -124,8 +123,8 @@ function App() {
                         {"id": 14, "name": "React.js"}
                     ]}
                     background_image = "#004346"
-                    background_description = "#001547"
                     orientation = "right"
+                    object_position = "left"
                 />
                 <ProjectCard
                     title = "Simon Says Game"
@@ -137,19 +136,18 @@ function App() {
                         {"id": 17, "name": "JavaScript"},
                     ]}
                     background_image = "#3C1642"
-                    background_description = "#001547"
                     orientation = "left"
                 />  
             </section>
             
             <section className="education">
-                <h1 className="education__title">EDUCATION</h1>
+                <h1 className="section-title">Education</h1>
                 <div className="education__description">Some courses I've acomplished:</div>
                 <Courses/>
             </section>
             
             <section className="about">
-                <h1 className="education__title">About me</h1>
+                <h1 className="section-title">About me</h1>
                 <div className="about__container">
                     <div className="about__description">
                         <p>
@@ -170,8 +168,8 @@ function App() {
                             Take a look at my portfolio work and let's see if we can work together on your next project!
                         </p>
                         <div className="description__buttons">
-                            <div className="description__btn"><span className="resume-text">My work</span></div>
-                            <div className="description__btn"><span className="resume-text">Let's talk!</span></div>
+                            {/* <div className="description__btn"><span className="resume-text">My work</span></div>
+                            <div className="description__btn"><span className="resume-text">Let's talk!</span></div> */}
                         </div>
                     </div>
                     <div className="about__image">

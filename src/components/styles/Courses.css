@@ -51,3 +51,10 @@
 .courses-item:hover {
     background-color: #01575a;
 }
+
+
+@media only screen and (max-width: 1250px){
+    .courses__title{
+        font-size: 0.8em;
+    }
+}

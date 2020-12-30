@@ -10,7 +10,9 @@ function ProjectCard(props) {
     let background_description = props.background_description;
     let orientation = props.orientation;
     let technologies = props.technologies;
+    let object_position = props.object_position;
 
+    let project_image_container = useRef(null);
     let project_image = useRef(null);
     let project_title = useRef(null);
     let project_description = useRef(null);
@@ -18,24 +20,25 @@ function ProjectCard(props) {
     let project_icons = useRef(null);
     
     useEffect(() => {
-        project_image.style.background = background_image;
-        project_description.style.background = background_description;
-        // project_image.style.background = background_color;
+        project_image_container.style.background = background_image;
+        project_image.style.objectPosition = object_position;
+        // project_description.style.background = background_description;
+        // project_image_container.style.background = background_color;
         // project_technologies.style.color = background_color;
 
         if (orientation === "left") {
-            project_image.className += " project-image__left";
+            project_image_container.className += " project-image__left";
             project_title.className += " project-title__left";
             project_description.className += " project-description__left";
             project_technologies.className += " project-technologies__list-left";
             project_icons.className += " project-icons__left";
         }
-    }, [background_description, background_image, orientation]); // I put the background_color prop as a dependency in the hook useEffect to not obtain a warning
+    }, [background_description, background_image, orientation, object_position]); // I put the background_color prop as a dependency in the hook useEffect to not obtain a warning
 
     return (
         <div className="container">
-            <div className="project-image" ref={el => {project_image = el}}>
-                <img src={props.image} alt="sorting_visualizer"/>
+            <div className="project-image" ref={el => {project_image_container = el}}>
+                <img ref={el => {project_image = el}} src={props.image} alt="project_image"/>
                 {/* <img src="%PUBLIC_URL%/sorting_visualizer.png" alt="sorting_visualizer"/> */}
             </div>
                 <h2 className="project-title" ref={el => {project_title = el}} >{props.title}</h2>
