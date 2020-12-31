@@ -5,7 +5,11 @@
     grid-template-rows: repeat(20, 5%);
     height: 60vh;
     font-family: sans-serif;
-    margin-top: 15%;
+    margin-bottom: 130px;
+}
+
+.container:nth-child(5) {
+    margin-bottom: 0;
 }
 
 .project-image {
@@ -211,8 +215,10 @@
 
 @media only screen and (max-width: 768px){
     .container {
-        min-height: 100vh;
+        height: auto;
+        /* min-height: 100vh; */
         display: block;
+        margin-bottom: 100px
     }
 
     .project-image {
@@ -236,8 +242,8 @@
 
     .project-description::after {
         box-shadow: none;
-        /* background-color: #000; */
-        opacity: 0;
+        background-color: #00e1e9;
+        opacity: 0.3;
     }
 
     .project-technologies__list {
@@ -251,6 +257,10 @@
 }
 
 @media only screen and (max-width: 425px){
+    /* .container {
+        height: auto
+    } */
+
     .project-technologies__list {
         font-size: 0.7em;
     }

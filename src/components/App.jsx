@@ -142,7 +142,7 @@ function App() {
             
             <section className="education">
                 <h1 className="section-title">Education</h1>
-                <div className="education__description">Some courses I've acomplished:</div>
+                <div className="education__description">Some courses I've acomplished during my professional career:</div>
                 <Courses/>
             </section>
             
