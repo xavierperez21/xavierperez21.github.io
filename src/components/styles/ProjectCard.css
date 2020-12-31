@@ -29,6 +29,15 @@
     -moz-box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.94);
 }
 
+.project-image a {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 9;
+}
+
 .project-image::after {
     content: "";
     background-color: #000;

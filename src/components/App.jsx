@@ -19,6 +19,10 @@ function App() {
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
     // const [data, setData] = useState([]);
+    let linkedin_profile = "https://www.linkedin.com/in/luisxavierpm/";
+    let github_profile = "https://github.com/xavierperez21";
+    let instagram_profile = "https://www.instagram.com/luisxavperez/";
+    let twitter_profile = "https://twitter.com/luisxavperez";
 
     let heroGreeting = useRef(null);
     let heroName = useRef(null);
@@ -77,7 +81,7 @@ function App() {
                 </section>
             </header>
 
-            <section className="portfolio">
+            <section id="portfolio" className="portfolio">
                 <h1 className="section-title">Projects</h1>
                 <ProjectCard
                     title = "Sorting Visualizer"
@@ -96,6 +100,8 @@ function App() {
                     ]}
                     background_image = "#15036d"
                     orientation = "right"
+                    github_link = "https://github.com/xavierperez21/Sorting_visualizer"
+                    project_link = "https://sorting-visualizer-lxpm.web.app/"
                 />
                 <ProjectCard
                     title = "Todo List"
@@ -111,6 +117,8 @@ function App() {
                     background_image = "#099CA9"
                     orientation = "left"
                     object_position = "left"
+                    github_link = "https://github.com/xavierperez21/Flask_webapp_ToDolis"
+                    project_link = "https://platzi-flask-task-list.ue.r.appspot.com/"
                 />
                 <ProjectCard
                     title = "Personal Portfolio"
@@ -125,6 +133,8 @@ function App() {
                     background_image = "#004346"
                     orientation = "right"
                     object_position = "left"
+                    github_link = "https://github.com/xavierperez21/xavierperez21.github.io"
+                    project_link = "https://xavierperez21.github.io/"
                 />
                 <ProjectCard
                     title = "Simon Says Game"
@@ -137,16 +147,18 @@ function App() {
                     ]}
                     background_image = "#3C1642"
                     orientation = "left"
+                    github_link = "https://github.com/xavierperez21/simon_says"
+                    project_link = "https://xavierperez21.github.io/simon_says/"
                 />  
             </section>
             
-            <section className="education">
+            <section id="education" className="education">
                 <h1 className="section-title">Education</h1>
                 <div className="education__description">Some courses I've acomplished during my professional career:</div>
                 <Courses/>
             </section>
             
-            <section className="about">
+            <section id="about" className="about">
                 <h1 className="section-title">About me</h1>
                 <div className="about__container">
                     <div className="about__description">
@@ -178,7 +190,7 @@ function App() {
                 </div>
             </section>
             
-            <section className="contact">
+            <section id="contact" className="contact">
                 {/* <div className="contact__separator"></div> */}
                 <div className="contact__title">
                     <h1>Let's work together!</h1>
@@ -186,10 +198,10 @@ function App() {
                 <div className="contact__links">
                     <p>If you want to build amazing things, contact me in the following links.</p>
                     <ul className="contact__links-list">
-                        <li><img className="linkedin_icon" src={linkedin_icon} alt="github-icon"/></li>
-                        <li><img className="github-icon" src={github_icon} alt="github-icon"/></li>
-                        <li><img className="instagram_icon" src={instagram_icon} alt="github-icon"/></li>
-                        <li><img className="twitter_icon" src={twitter_icon} alt="github-icon"/></li>
+                        <li><a href={linkedin_profile} target="_blank" rel="noreferrer"><img className="linkedin_icon" src={linkedin_icon} alt="github-icon"/></a></li>
+                        <li><a href={github_profile} target="_blank" rel="noreferrer"><img className="github-icon" src={github_icon} alt="github-icon"/></a></li>
+                        <li><a href={instagram_profile} target="_blank" rel="noreferrer"><img className="instagram_icon" src={instagram_icon} alt="github-icon"/></a></li>
+                        <li><a href={twitter_profile} target="_blank" rel="noreferrer"><img className="twitter_icon" src={twitter_icon} alt="github-icon"/></a></li>
                     </ul>
                 </div>
                 <div className="contact__say_hi">
