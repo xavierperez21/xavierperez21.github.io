@@ -3,25 +3,35 @@ import React from 'react';
 import './styles/Navbar.css'
 
 class Navbar extends React.Component {
+
     componentDidMount() {
         const hamburger = document.querySelector('.hamburger');
         const navItems = document.querySelector('.navbar__items');
         const items = document.querySelectorAll('.navbar__items li');
+        const lines = document.querySelectorAll('.hamburger div');
+
+        console.log(lines);
+
 
         hamburger.addEventListener("click", () => {
+            // Introducing the mobile menu
             navItems.classList.toggle('open');
-            items.forEach(item => {
-                item.classList.toggle('fade');
-            });
-        });
 
-        items.forEach(item => {
-            item.addEventListener("click", () => {
-                navItems.classList.remove('open');
-                items.forEach(item => {
-                    item.classList.remove('fade');
-                });
-            })
+            // Animating every link of the mobile menu
+            items.forEach( (item, index) => {
+                if (item.style.animation) {
+                    item.style.animation = "";
+                }
+                else {
+                    item.style.animation = `navItemFade 0.5s ease forwards ${index/items.length + 0.4}s`;
+                }
+            });
+
+            // Burger animation
+            // hamburger.classList.toggle('toggle');
+            lines.forEach(line => {
+                line.classList.toggle('active');
+            });
         });
     }
     
@@ -29,9 +39,9 @@ class Navbar extends React.Component {
         return (
             <nav>
                 <div className="hamburger">
-                    <div className="line"></div>
-                    <div className="line"></div>
-                    <div className="line"></div>
+                    <div className="line1"></div>
+                    <div className="line2"></div>
+                    <div className="line3"></div>
                 </div>
                 {/* <div className="logo"><a href="/">Logo</a></div> */}
                 <ul className="navbar__items">
