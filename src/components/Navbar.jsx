@@ -3,19 +3,46 @@ import React from 'react';
 import './styles/Navbar.css'
 
 class Navbar extends React.Component {
+    componentDidMount() {
+        const hamburger = document.querySelector('.hamburger');
+        const navItems = document.querySelector('.navbar__items');
+        const items = document.querySelectorAll('.navbar__items li');
+
+        hamburger.addEventListener("click", () => {
+            navItems.classList.toggle('open');
+            items.forEach(item => {
+                item.classList.toggle('fade');
+            });
+        });
+
+        items.forEach(item => {
+            item.addEventListener("click", () => {
+                navItems.classList.remove('open');
+                items.forEach(item => {
+                    item.classList.remove('fade');
+                });
+            })
+        });
+    }
+    
     render() {
         return (
-            <div className="Navbar">
+            <nav>
+                <div className="hamburger">
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                </div>
+                {/* <div className="logo"><a href="/">Logo</a></div> */}
                 <ul className="navbar__items">
-                    <a href="/" className="logo"><li>Logo</li></a>
-                    <a href="/"><li className="navbar__items-item">Home</li></a>
-                    <a href="#portfolio"><li className="navbar__items-item">Portfolio</li></a>
-                    <a href="#education"><li className="navbar__items-item">Education</li></a>
-                    <a href="#about"><li className="navbar__items-item">About</li></a>
-                    <a href="#contact"><li className="navbar__items-item">Contact</li></a>
-                    <a href="/"><li className="navbar__items-item resume"><span className="resume-text">Resume</span></li></a>
+                    <li className="navbar__items-item"><a href="/">Home</a></li>
+                    <li className="navbar__items-item"><a href="#portfolio">Portfolio</a></li>
+                    <li className="navbar__items-item"><a href="#education">Education</a></li>
+                    <li className="navbar__items-item"><a href="#about">About</a></li>
+                    <li className="navbar__items-item"><a href="#contact">Contact</a></li>
+                    <li className="navbar__items-item resume"><a href="/"><span className="resume-text">Resume</span></a></li>
                 </ul>
-            </div>
+            </nav>
         );
     }
 }
