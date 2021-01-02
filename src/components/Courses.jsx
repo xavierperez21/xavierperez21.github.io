@@ -40,7 +40,7 @@ class Courses extends React.Component {
     }
 
     componentDidMount() {
-        console.log("yo primero")
+        // console.log("yo primero")
         this.fetchData();
     }
 
@@ -53,10 +53,9 @@ class Courses extends React.Component {
             return <PageError error={this.state.error} />
         }
 
-        console.log("luego yo")
+        // console.log("luego yo")
         let courses = this.state.data;
-        // [courses[53], courses[52]] = [courses[52], courses[53]]
-        console.log(courses)
+        // console.log(courses)
 
         return(
             <div className="education__container">

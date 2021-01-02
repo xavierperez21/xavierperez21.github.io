@@ -6,8 +6,12 @@ nav {
     font-size: 0.9em;
     position: fixed;
     transition: 0.3s;
-    z-index: 5;
+    z-index: 10;
     /* background-color: #030335; */
+}
+
+.hamburger {
+    display: none;
 }
 
 /* .logo {
@@ -70,12 +74,13 @@ nav {
 
 @media screen and (max-width: 768px) {
     .hamburger {
+        display: block;
         position: absolute;
         cursor: pointer;
         right: 10%;
         top: 50%;
         transform: translate(-5%, -50%);
-        z-index: 3;
+        z-index: 11;
     }
     
     .hamburger div {
@@ -83,7 +88,7 @@ nav {
         height: 3px;
         background-color: white;
         margin: 5px;
-        z-index: 2;
+        z-index: 10;
         transition: all 0.3s ease;
     }
 
@@ -95,7 +100,7 @@ nav {
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        z-index: 2;
+        z-index: 10;
         clip-path: circle(100px at 90% -20%);
         -webkit-clip-path: circle(100px at 90% -20%);
         transition: all 0.8s ease-out;
