@@ -13,12 +13,12 @@ class Courses extends React.Component {
     }
 
 
-    fetchData = async () => {
+    fetchData = () => {
         this.setState({ loading: true, error: null });  // We initialize again the values of login and error in case that fetchData() is called again
 
         const url = "https://platzi-user-api.jecsham.com/api/v1/getUserSummary/@xavier_perez21";
 
-        await fetch(url)
+        fetch(url)
         .then(res => res.json())
         .then(
             (result) => {

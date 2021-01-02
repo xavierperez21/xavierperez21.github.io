@@ -42,7 +42,7 @@ class Navbar extends React.Component {
                 // console.log(window.pageYOffset);
                 app.style.top = `-${window.scrollY}px`;
                 app.style.position = 'fixed';
-                app.style.paddingRight = '15px';
+                // app.style.paddingRight = '15px';
                 hamburgerIsClicked = false;
                 console.log(window.scrollY);
             }
