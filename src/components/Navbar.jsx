@@ -9,6 +9,7 @@ class Navbar extends React.Component {
         const navItems = document.querySelector('.navbar__items');
         const items = document.querySelectorAll('.navbar__items li');
         const lines = document.querySelectorAll('.hamburger div');
+        const nav = document.getElementById("nav");
 
         console.log(lines);
 
@@ -33,11 +34,38 @@ class Navbar extends React.Component {
                 line.classList.toggle('active');
             });
         });
+        
+        // Hiding the navbar when the user scrolls
+        let prevScrollpos = window.pageYOffset;
+    
+        window.onscroll = () => {
+            console.log(window.pageYOffset);
+            let currentScrollPos = window.pageYOffset;
+            
+            if (prevScrollpos > currentScrollPos) {
+                // If the nav has reached the top of the page, we reset the styles
+                if (window.pageYOffset === 0){
+                    nav.style.height = "100px";
+                    nav.style.background = "";
+                    nav.style.boxShadow = "";
+                }
+                else {
+                    nav.style.height = "80px";
+                    nav.style.top = "0";
+                    nav.style.background = "#030335";
+                    nav.style.boxShadow = "0px 5px 10px 0px rgba(0,0,0,0.94)";
+                } 
+            }
+            else {
+                nav.style.top = "-100px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
     }
     
     render() {
         return (
-            <nav>
+            <nav id="nav">
                 <div className="hamburger">
                     <div className="line1"></div>
                     <div className="line2"></div>

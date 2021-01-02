@@ -1,12 +1,13 @@
 nav {
     /* outline: 1px solid blue; */
     height: 100px;
+    width: 100%;
     font-family: sans-serif;
     font-size: 0.9em;
-}
-
-.hamburger {
-    /* display: none; */
+    position: fixed;
+    transition: 0.3s;
+    z-index: 5;
+    /* background-color: #030335; */
 }
 
 /* .logo {
@@ -17,6 +18,7 @@ nav {
 } */
 
 .navbar__items {
+    /* outline: solid 1px green; */
     width: 80%;
     display: flex;
     height: inherit;
@@ -67,10 +69,6 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-    nav {
-        position: relative;
-    }
-    
     .hamburger {
         position: absolute;
         cursor: pointer;
