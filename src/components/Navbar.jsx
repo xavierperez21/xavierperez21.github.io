@@ -135,7 +135,7 @@ class Navbar extends React.Component {
                     <li className="navbar__items-item"><a href="#education">Education</a></li>
                     <li className="navbar__items-item"><a href="#about">About</a></li>
                     <li className="navbar__items-item"><a href="#contact">Contact</a></li>
-                    <li className="navbar__items-item resume"><a href="/"><span className="resume-text">Resume</span></a></li>
+                    <li className="navbar__items-item resume"><a href="../Resume.pdf" type="application/pdf" rel="noopener noreferrer" target="_blank"><span className="resume-text">Resume</span></a></li>
                 </ul>
             </nav>
         );

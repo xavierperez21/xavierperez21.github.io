@@ -55,7 +55,34 @@ class Courses extends React.Component {
 
         // console.log("luego yo")
         let courses = this.state.data;
-        // console.log(courses)
+        let javascript_courses = [];
+        let python_courses = [];
+        let php_courses = [];
+        let basic_courses = [];
+        
+        courses.forEach(course => {
+            if (course.career === "Arquitectura Frontend" || course.career === "JavaScript" || course.career === "Backend con JavaScript") {
+                if(!course.title.includes("Prework")) {
+                    javascript_courses.push(course);
+                };
+            }
+            else if (course.career === "Big Data y Data Science" || course.career === "Desarrollo Backend con Python y Django") {
+                if(!course.title.includes("Prework")) {
+                    python_courses.push(course);
+                };
+            }
+            else if (course.title.includes("PHP")) {
+                if(!course.title.includes("Prework")) {
+                    php_courses.push(course);
+                };
+            }
+            else if (course.career === "Desarrollo Backend con Ruby") {
+                if(!course.title.includes("Prework")) {
+                    basic_courses.push(course);
+                };
+            }
+        });
+        console.log(courses)
 
         return(
             <div className="education__container">
@@ -64,20 +91,15 @@ class Courses extends React.Component {
                     </div>
                     <div className="education__courses javascript-courses">
                         {
-                            courses.map(course => {
-                                if (course.career === "Arquitectura Frontend" || course.career === "JavaScript" || course.career === "Backend con JavaScript") {
-                                    if(course.title.includes("Prework")) return null;
-                                    
-                                    return (
-                                        <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
-                                            <div className="courses-item">
-                                                <img src={course.badge} alt="course"/>
-                                                <p>{course.title}</p>
-                                            </div>
-                                        </a>
-                                    );
-                                }
-                                return null;
+                            javascript_courses.map(course => {
+                                return (
+                                    <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
+                                        <div className="courses-item">
+                                            <img src={course.badge} alt="course"/>
+                                            <p>{course.title}</p>
+                                        </div>
+                                    </a>
+                                );
                             })
                         }
                     </div>
@@ -87,20 +109,15 @@ class Courses extends React.Component {
                     </div>
                     <div className="education__courses python-courses">
                         {
-                            courses.map(course => {
-                                if (course.career === "Big Data y Data Science" || course.career === "Desarrollo Backend con Python y Django") {
-                                    if(course.title.includes("Prework")) return null;
-                                    
-                                    return (
-                                        <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
-                                            <div className="courses-item">
-                                                <img src={course.badge} alt="course"/>
-                                                <p>{course.title}</p>
-                                            </div>
-                                        </a>
-                                    );
-                                }
-                                return null;
+                            python_courses.map(course => {
+                                return (
+                                    <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
+                                        <div className="courses-item">
+                                            <img src={course.badge} alt="course"/>
+                                            <p>{course.title}</p>
+                                        </div>
+                                    </a>
+                                );
                             })
                         }
                     </div>
@@ -110,20 +127,15 @@ class Courses extends React.Component {
                     </div>
                     <div className="education__courses php-courses">
                         {
-                            courses.map(course => {
-                                if (course.title.includes("PHP")) {
-                                    if(course.title.includes("Prework")) return null;
-                                    
-                                    return (
-                                        <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
-                                            <div className="courses-item">
-                                                <img src={course.badge} alt="course"/>
-                                                <p>{course.title}</p>
-                                            </div>
-                                        </a>
-                                    );
-                                }
-                                return null;
+                            php_courses.map(course => {
+                                return (
+                                    <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
+                                        <div className="courses-item">
+                                            <img src={course.badge} alt="course"/>
+                                            <p>{course.title}</p>
+                                        </div>
+                                    </a>
+                                );
                             })
                         }
                     </div>
@@ -133,20 +145,15 @@ class Courses extends React.Component {
                     </div>
                     <div className="education__courses tools_and_more-courses">
                         {
-                            courses.map(course => {
-                                if (course.career === "Desarrollo Backend con Ruby") {
-                                    if(course.title.includes("Prework")) return null;
-                                    
-                                    return (
-                                        <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
-                                            <div className="courses-item">
-                                                <img src={course.badge} alt="course"/>
-                                                <p>{course.title}</p>
-                                            </div>
-                                        </a>
-                                    );
-                                }
-                                return null;
+                            basic_courses.map(course => {
+                                return (
+                                    <a key={course.id} className="courses-item__link" href={`https://platzi.com${course.diploma_link}`} target="_blank" rel="noreferrer">
+                                        <div className="courses-item">
+                                            <img src={course.badge} alt="course"/>
+                                            <p>{course.title}</p>
+                                        </div>
+                                    </a>
+                                );
                             })
                         }
                     </div>
