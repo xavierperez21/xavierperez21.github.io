@@ -205,8 +205,8 @@ function App() {
                     </ul>
                 </div>
                 <div className="contact__say_hi">
-                    <p>Or just say hi! to:</p>
-                    <a href="/"><p className="contact__mail">hello@xavierpm.com</p></a>
+                    <p>Or just send me a message by clicking my email:</p>
+                    <a href="mailto:xavierpm1221@gmail.com"><p className="contact__mail">xavierpm1221@gmail.com</p></a>
                 </div>
             </section>
             
