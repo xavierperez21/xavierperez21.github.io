@@ -11,9 +11,13 @@ import github_icon from '../images/github_icon.svg';
 import instagram_icon from '../images/instagram_icon.svg';
 import twitter_icon from '../images/twitter_icon.svg';
 
-import { TweenMax, Power3 } from 'gsap';
-
+import { gsap, TweenMax, Power3 } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './styles/App.css';
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 function App() {
     // const [error, setError] = useState(null);
@@ -28,10 +32,48 @@ function App() {
     let heroName = useRef(null);
     let heroCareer = useRef(null);
 
+    // Creating array of references of sections
+    const revealRefs = useRef([]);
+    revealRefs.current = [];    // This is how we access to the HTML tags
+    
+    // This function adds a new element to the array of references.
+    // This is passed as reference in the attribute "ref" of the HTML elements.
+    const addToRefs = el => {
+        if (el && !revealRefs.current.includes(el)) {
+            revealRefs.current.push(el);
+        }
+    };
+
+    // we don't have any references here, until the component is mounted, and we can know that in the useEffect() hook
+    // console.log(revealRefs);
+
     useEffect(() => {
         TweenMax.fromTo(heroGreeting, 1, { opacity: 0, y: 40 }, { opacity: 1, y: 0, ease: Power3.easeInOut })
         TweenMax.fromTo(heroName, 1.4, { opacity: 0, y: 20 }, { opacity: 1, y: 0, ease: Power3.easeInOut })
         TweenMax.fromTo(heroCareer, 1.8, { opacity: 0, y: 20 }, { opacity: 1, y: 0, ease: Power3.easeInOut })
+        
+        // Now we have all the references, because the component has mounted.
+        console.log(revealRefs);
+
+        // Iterating over all the array of refs
+        revealRefs.current.forEach((el, index) => {
+            gsap.fromTo(el, {
+                autoAlpha: 0,   // From opacity 0
+                y: 20           // initial position for the translation
+            }, {
+                duration: 0.5,
+                autoAlpha: 1,   // To opacity of 1
+                y: 0,           // To the normal position in y
+                ease: Power3.easeInOut,
+                scrollTrigger: {                // Using the ScrollTrigger plugin
+                    id: `section-${index+1}`,
+                    trigger: el,                // Selecting the corresponding html element, that is inside of this array of refs
+                    start: 'top center+=100',   // When the animation will start, when the "top" of the section crosses with the "center" of the scroll
+                    toggleActions: 'play none none reverse' // Resets the animmation when the scroll goes in reverse.
+                }
+            });
+     
+        });
 
         // fetch("https://platzi-user-api.jecsham.com/api/v1/getUserSummary/@xavier_perez21")
         // .then(res => res.json())
@@ -82,7 +124,7 @@ function App() {
             </header>
 
             <section id="portfolio" className="portfolio">
-                <h1 className="section-title">Projects</h1>
+                <h1 className="section-title" ref={addToRefs}>Projects</h1>
                 <ProjectCard
                     title = "Sorting Visualizer"
                     description = {
@@ -152,13 +194,13 @@ function App() {
                 />  
             </section>
             
-            <section id="education" className="education">
+            <section id="education" className="education" ref={addToRefs}>
                 <h1 className="section-title">Education</h1>
                 <div className="education__description">Some courses I've acomplished during my professional career:</div>
                 <Courses/>
             </section>
             
-            <section id="about" className="about">
+            <section id="about" className="about" ref={addToRefs}>
                 <h1 className="section-title">About me</h1>
                 <div className="about__container">
                     <div className="about__description">
@@ -190,7 +232,7 @@ function App() {
                 </div>
             </section>
             
-            <section id="contact" className="contact">
+            <section id="contact" className="contact" ref={addToRefs}>
                 {/* <div className="contact__separator"></div> */}
                 <div className="contact__title">
                     <h1>Let's work together!</h1>

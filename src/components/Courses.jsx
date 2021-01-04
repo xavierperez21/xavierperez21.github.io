@@ -82,7 +82,6 @@ class Courses extends React.Component {
                 };
             }
         });
-        console.log(courses)
 
         return(
             <div className="education__container">

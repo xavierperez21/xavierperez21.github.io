@@ -4,6 +4,12 @@ import './styles/ProjectCard.css';
 import github_icon from '../images/github_icon.svg';
 import external_link_icon from '../images/external_link.png'
 
+import { gsap, Power3 } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 function ProjectCard(props) {
     
     let background_image = props.background_image;
@@ -20,7 +26,9 @@ function ProjectCard(props) {
     let project_description = useRef(null);
     let project_technologies = useRef(null);
     let project_icons = useRef(null);
-    
+
+    let projectRef = useRef(null);
+
     useEffect(() => {
         project_image_container.style.background = background_image;
         project_image.style.objectPosition = object_position;
@@ -32,14 +40,30 @@ function ProjectCard(props) {
             project_technologies.className += " project-technologies__list-left";
             project_icons.className += " project-icons__left";
         }
+
+        // Animmation of the projectCard using the ScrollTrigger plugin
+        gsap.fromTo(projectRef, {
+            autoAlpha: 0,   // From opacity 0
+            y: 20           // initial position for the translation
+        }, {
+            duration: 0.5,
+            autoAlpha: 1,   // To opacity of 1
+            y: 0,           // To the normal position in y
+            ease: Power3.easeInOut,
+            scrollTrigger: {                // Using the ScrollTrigger plugin
+                id: `section`,
+                trigger: projectRef,                // Selecting the corresponding html element, that is inside of this array of refs
+                start: 'top center+=100',   // When the animation will start, when the "top" of the section crosses with the "center" of the scroll
+                toggleActions: 'play none none reverse' // Resets the animmation when the scroll goes in reverse.
+            }
+        });
     }, [background_image, orientation, object_position]); // I put the background_color prop as a dependency in the hook useEffect to not obtain a warning
 
     return (
-        <div className="container">
+        <div className="container" ref={el => {projectRef = el}}>
             <div className="project-image" ref={el => {project_image_container = el}}>
                 <a href={project_link} target="_blank" rel="noreferrer"></a>
                 <img ref={el => {project_image = el}} src={props.image} alt="project_image"/>
-                {/* <img src="%PUBLIC_URL%/sorting_visualizer.png" alt="sorting_visualizer"/> */}
             </div>
             <h2 className="project-title" ref={el => {project_title = el}} >{props.title}</h2>
             <div className="project-description" ref={el => {project_description = el}}>

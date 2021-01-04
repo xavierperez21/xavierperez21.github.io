@@ -76,15 +76,14 @@ class Navbar extends React.Component {
                     // Removing the clip path of the burger menu
                     navItems.classList.remove('open');
     
-                    // 
-                    items.forEach( (item, index) => {
-                        if (item.style.animation) {
-                            item.style.animation = "";
-                        }
-                        else {
-                            item.style.animation = `navItemFade 0.5s ease forwards ${index/items.length + 0.4}s`;
-                        }
+                    // We remove the animmation "fade" of each option of the menu...
+                    //... so we can reset that animmation when we click again in the...
+                    // ... burger menu
+                    items.forEach( item => {
+                        item.style.animation = "";
                     });
+
+                    // We toggle the animmation of the burger menu so it can go back to the start point
                     lines.forEach(line => {
                         line.classList.toggle('active');
                     });
