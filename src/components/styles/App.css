@@ -251,6 +251,10 @@
     font-weight: bold;
 }
 
+.contact__say_hi a:hover {
+    text-decoration: underline;
+}
+
 .contact__mail {
     margin-top: 5px;
 }

@@ -232,7 +232,7 @@ function App() {
                 </div>
             </section>
             
-            <section id="contact" className="contact" ref={addToRefs}>
+            <section id="contact" className="contact">
                 {/* <div className="contact__separator"></div> */}
                 <div className="contact__title">
                     <h1>Let's work together!</h1>
