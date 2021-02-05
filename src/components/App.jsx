@@ -227,7 +227,7 @@ function App() {
                         </div>
                     </div>
                     <div className="about__image">
-                        <img src="https://i.imgur.com/zhhuLwo.jpg" alt="my_image"/>
+                        <img src="https://i.imgur.com/SAKVgIt.jpg" alt="my_image"/>
                     </div>
                 </div>
             </section>
